@@ -128,7 +128,7 @@ document.querySelector("#remove button").addEventListener('click',function(){
 var userList = document.getElementById("inactive");
 while(element.firstChild){
   element.removeChild(userList.firstChild):
-}
+
 
 //-------------------------------------------
 
