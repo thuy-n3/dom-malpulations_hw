@@ -48,47 +48,40 @@ document.querySelector("#color-circle button").addEventListener('click',function
 document.querySelector("#blow-up button").addEventListener('click',function(){
   //TASK #4}
 
-var expandingCircle = document.querySelector('#circle-red')
+// var expandingCircle = document.querySelector('.circle-red')
 
-var originalWidth = parseInt(expandingCircleStyle.width, 10)
-var originalHeight = parseInt(expandingCircleStyle.height, 10)
+// var expandingCircleStyle = window.getComputedStyle(expandingCircle)
 
-var expandingCircleStyle = window.getComputedStyle(expandingCircle)
+// var oldWidth = parseInt(expandingCircleStyle.width)
 
-var currentWidth = parseInt(expandingCircleStyle.width, 10)
-var currentHeight = parseInt(expandingCircleStyle.height, 10)
+// expandingCircle.style.width = (oldWidth * 2) + "px"
+
+// })
 
 
-if( currentWidth < originalWidth *5 ){
-  expandingCircle.style.height = (currentHeight*2 + "px")
-  expandingCircle.style.width = (currentWidth*2 + "px")
-}
-
-else{
-  expandingCircle.style.height = originalHeight + "px"
-  expandingCircle.style.width = originalWidth+ "px"
-
-}
-
-})
 
 //-------------------------------------------------------------
 
-// document.querySelector("#blow-up button").addEventListener('click',function(){
+document.querySelector("#blow-up button").addEventListener('click',function(){
  
 
-// var expandingCircle = document.querySelector('.circle-red')
+var circleRed = document.querySelector(".circle-red")
 
-// var expandingCircleStyle = window.getComputedStyle(circle-red)
+var circleRedStyles = window.getComputedStyle(circleRed)
 
-// var circleSize = parseInt(expandingCircleStyle.width, 10)
-// var circleSize = parseInt(expandingCircleStyle.height, 10)
+var circleSizeWidth = parseInt(circleRedStyles.width, 10)
+var circleSizeHeight = parseInt(circleRedStyles.height, 10)
 
-// if(circleSize < 300){
-// circle-red.size.width = (circleSize*2) + "px"
-// circle-red.size.height = (circleSize*2) + "px"
+if(circleSizeWidth < 300){
+circleRed.style.width = (circleSizeWidth*2) + "px"
+circleRed.style.height = (circleSizeHeight*2) + "px"
+}
+else{
+  circleRed.style.width = 40 + "px"
+  circleRed.style.height = 40 + "px"
+}
 
-// })
+})
 
 //------travis review-----------------------------------------
 
@@ -121,33 +114,69 @@ else{
 //-------------------------------------------------------------------------------
 
 
-document.querySelector("#remove button").addEventListener('click',function(){
-  // TASK #5
+// document.querySelector("#remove button").addEventListener('click',function(){
+//   // TASK #5
 
-//removing all children from an element
-var userList = document.getElementById("inactive");
-while(element.firstChild){
-  element.removeChild(userList.firstChild):
+// var allLiElements = document.querySelectorAll('#userList li')
+
+//   var activeUserArray = []
+
+//   for(i=0; i<allLiElements.length; i++){
+       
+//     if(allLiElements[i].className === "active"){
+//       activeUserArray.push(allLiElements[i].outerHTML)
+//     }
+//   }
+
+// //-----------------------------------------------------------
+
+// var findActiveUser = function(userElement){
+//   if(userElement.classList.contain('active')){
+//     return true 
+//   }
+// else{
+//     return false
+//   }
+// }
+
+// var allUl = document.querySelector("#userList")
+
+// var allLi = document.querySelectorAll("#userList li")
+
+// for (var i=0; i<allUsers.length i++){
 
 
-//-------------------------------------------
-
-//remove first <li> element from list 
-var list = document.getElementById("userList");
-list.removeChild(.list.childNods[1]);
-
-//need to remover class li : "inactive"
-
-//-------------------------------------------
-
-//removing all child nodes of a list 
-var list = document.getElementById("userList");
-while (list.hasChildNodes()){
-  list.removeChild(list.firstChild);
-}
+// })
 
 
-})
+
+
+
+//------------------
+//   //step 1 - select all userList <li> element 
+//   var allLiElements = document.querySelectorAll('#userList li')
+//   console.log(allLiElements)
+
+//   console.log(allLiElements.length)
+
+//   var activeUserArray = []
+
+//   for(i=0; i<allLiElements.length; i++){
+//     console.log(allLiElements[i].className)
+       
+//     if(allLiElements[i].className === "active"){
+//       console.log(allLiElements[i].outerHTML)
+//       activeUserArray.push(allLiElements[i].outerHTML)
+//     }
+
+//   }
+//   console.log(activeUserArray)
+//   console.log(activeUserArray.join())
+
+
+//   document.querySelector('#remove .answer-box').innerHTML = activeUserArray.join('')
+
+// })
 
 
 //-------------------------------------------------------------------------------
@@ -161,7 +190,7 @@ document.querySelector("#reverse-squares button").addEventListener('click',funct
 //change first square from orange to dark blue 
 //last square from dark to to orange when click 
 
-var switchAroundSquares = document.querySelector("#answerbox"//?
+var switchAroundSquares = document.querySelector("#answerbox")
 
 
 
@@ -169,31 +198,48 @@ var switchAroundSquares = document.querySelector("#answerbox"//?
 
 
 //-------------------------------------------------------------------------------
+var answerboxNode = document.querySelector("#reverse-squares #answerbox")
+var squares = answerboxNode.querySelectorAll
+//taking out the block and moving to the back//
 
+})
 //-------------------------------------------------------------------------------
 
 
 document.querySelector("#pig-latin button").addEventListener('click',function(){
   // TASK #7
 
-var pigLatinTranslator = document.querySelector("#tasks"//?
+var taskBox = document.querySelectorAll("#tasks li")
 
 
-//look at pig latin example
-// var pigLatin = function(inputWord){
-//   var newWord = ""
-//     var almostThere = inputWord + inputWord[0] + "ay"
-//     return almostThere.substr(1)
-// }
-// var word = 'depressed'
+var reverseString = function(input){
+  var newString = ''
+    for(var i = input.length-1; i>=0; i--){
+      var char = input.charAt(i)
+      newString += char 
+    }
+    return newString
+}
 
-// log(pigLatin('depressed'))
+//console.log(reverseString("This Sting"))
+
+
+var newArray = []
+  for(var i=0; i <taskBox.length; i++){
+    var newStringArray = reverseString(taskBox[i].innerHTML)
+    taskBox[i].innerHTML=newStringArray
+    newArray.push(newStringArray)
+  }
+
+console.log(newArray)
+
+
 
 
 })
 
 
-//-------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------
 
