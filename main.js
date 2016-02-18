@@ -48,15 +48,15 @@ document.querySelector("#color-circle button").addEventListener('click',function
 document.querySelector("#blow-up button").addEventListener('click',function(){
   //TASK #4}
 
-// var expandingCircle = document.querySelector('.circle-red')
+var expandingCircle = document.querySelector('.circle-red')
 
-// var expandingCircleStyle = window.getComputedStyle(expandingCircle)
+var expandingCircleStyle = window.getComputedStyle(expandingCircle)
 
-// var oldWidth = parseInt(expandingCircleStyle.width)
+var oldWidth = parseInt(expandingCircleStyle.width)
 
-// expandingCircle.style.width = (oldWidth * 2) + "px"
+expandingCircle.style.width = (oldWidth * 2) + "px"
 
-// })
+})
 
 
 
@@ -83,101 +83,40 @@ else{
 
 })
 
-//------travis review-----------------------------------------
-
-// var squareDiv = document.querySelector('.square')
-
-// var originalWidth = parseInt(squareStyle.width, 10)
-// var originalHeight = parseInt(squareStyle.height, 10)
-
-// //----
-
-// var squareStyle = window.getComputedStyle(squareDiv)
-// var currentWidth = parseInt(squareStyle.width, 10)
-// var currentHeight = parseInt(squareStyle.height, 10)
-
-
-// if( currentWidth < originalWidth *5 ){
-//   squareDiv.style.height = (currentHeight*2 + "px")
-//   squareDiv.style.width = (currentWidth*2 + "px")
-// }
-
-// else{
-//   squareDiv.style.height = originalHeight + "px"
-//   squareDiv.style.width = originalWidth+ "px"
-
-// }
-
 
 //-------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------
 
 
-// document.querySelector("#remove button").addEventListener('click',function(){
-//   // TASK #5
+document.querySelector("#remove button").addEventListener('click',function(){
+  // TASK #5
 
-// var allLiElements = document.querySelectorAll('#userList li')
+var userStatus = function(userElement){
+  if(userElement.classList.contains('inactive')){
+    return true
+  }
+  else{
+    return false
+  }
+}
 
-//   var activeUserArray = []
+var allLi = document.querySelectorAll('#userList li')
+//console.log(allLi)
 
-//   for(i=0; i<allLiElements.length; i++){
-       
-//     if(allLiElements[i].className === "active"){
-//       activeUserArray.push(allLiElements[i].outerHTML)
-//     }
-//   }
+var allUl = document.querySelector('#userList')
+//console.log(allUl) 
 
-// //-----------------------------------------------------------
+for(i=0; i<allLi.length; i++){
+  //console.log(allLi[i].className)
+  var activeUserLi = allLi[i]
+  if(userStatus(activeUserLi)){
+    allUl.removeChild(activeUserLi)
+  }
 
-// var findActiveUser = function(userElement){
-//   if(userElement.classList.contain('active')){
-//     return true 
-//   }
-// else{
-//     return false
-//   }
-// }
+}
 
-// var allUl = document.querySelector("#userList")
-
-// var allLi = document.querySelectorAll("#userList li")
-
-// for (var i=0; i<allUsers.length i++){
-
-
-// })
-
-
-
-
-
-//------------------
-//   //step 1 - select all userList <li> element 
-//   var allLiElements = document.querySelectorAll('#userList li')
-//   console.log(allLiElements)
-
-//   console.log(allLiElements.length)
-
-//   var activeUserArray = []
-
-//   for(i=0; i<allLiElements.length; i++){
-//     console.log(allLiElements[i].className)
-       
-//     if(allLiElements[i].className === "active"){
-//       console.log(allLiElements[i].outerHTML)
-//       activeUserArray.push(allLiElements[i].outerHTML)
-//     }
-
-//   }
-//   console.log(activeUserArray)
-//   console.log(activeUserArray.join())
-
-
-//   document.querySelector('#remove .answer-box').innerHTML = activeUserArray.join('')
-
-// })
-
+})
 
 //-------------------------------------------------------------------------------
 
@@ -187,22 +126,30 @@ else{
 document.querySelector("#reverse-squares button").addEventListener('click',function(){
   // TASK #6
 
+  var switchingSquaresContainer = document.querySelectorAll('.answerBox')
+  var switchingSquares = document.querySelector('.answerbox span')
+
+  for(var i=switchingSquares-1; i=0; i--){
+    
+  }
+
+
+
+
+
+ })
+
+// //-------------------------------------------------------------------------------
+// var answerboxNode = document.querySelector("#reverse-squares #answerbox")
+// var squares = answerboxNode.querySelectorAll
+//taking out the block and moving to the back//
+
 //change first square from orange to dark blue 
 //last square from dark to to orange when click 
 
-var switchAroundSquares = document.querySelector("#answerbox")
+// var switchAroundSquares = document.querySelector("#answerbox")
 
 
-
-})
-
-
-//-------------------------------------------------------------------------------
-var answerboxNode = document.querySelector("#reverse-squares #answerbox")
-var squares = answerboxNode.querySelectorAll
-//taking out the block and moving to the back//
-
-})
 //-------------------------------------------------------------------------------
 
 
